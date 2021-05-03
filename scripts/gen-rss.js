@@ -5,9 +5,9 @@ const matter = require('gray-matter')
 
 async function generate() {
   const feed = new RSS({
-    title: 'Your Name',
-    site_url: 'https://yoursite.com',
-    feed_url: 'https://yoursite.com/feed.xml'
+    title: 'Gladstar Gifted and Talented School',
+    site_url: 'https://gladstar.sch.ng',
+    feed_url: 'https://blog.gladstar.sch.ng/feed.xml'
   })
 
   const posts = await fs.readdir(path.join(__dirname, '..', 'pages', 'posts'))
@@ -19,8 +19,8 @@ async function generate() {
       const content = await fs.readFile(
         path.join(__dirname, '..', 'pages', 'posts', name)
       )
-      const frontmatter = matter(content)
-
+      const frontmatter = matter(content)  
+	  <data:1639191272987391_2360388014201043,1639191272987391_2555614208011755/>
       feed.item({
         title: frontmatter.data.title,
         url: '/posts/' + name.replace(/\.mdx?/, ''),
